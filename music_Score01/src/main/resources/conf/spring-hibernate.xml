@@ -77,9 +77,10 @@
             <!-- 扫描hibernate注解配置的entity -->  
             <property name="packagesToScan" value="com.music.model" />  
             <!-- 引入User的映射文件 -->
-			<property name="mappingLocations">
+<!-- 			<property name="mappingLocations">
 				<value>classpath:conf/hbm/*.hbm.xml </value>
 			</property>
+-->
         </bean>  
       
         <!-- 配置事务管理器 -->  

@@ -21,28 +21,28 @@ USE `music`;
 DROP TABLE IF EXISTS `app_authority`;
 
 CREATE TABLE `app_authority` (
-  `id` varchar(50) NOT NULL,
+  `authority_id` varchar(50) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`authority_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `app_authority` */
 
-insert  into `app_authority`(`id`,`name`) values ('1','sys:eidit'),('2','sys:config'),('3','sys:onlyRead'),('4','sys:add'),('5','sys:delete');
+insert  into `app_authority`(`authority_id`,`name`) values ('1','sys:eidit'),('2','sys:config'),('3','sys:onlyRead'),('4','sys:add'),('5','sys:delete');
 
 /*Table structure for table `app_role` */
 
 DROP TABLE IF EXISTS `app_role`;
 
 CREATE TABLE `app_role` (
-  `id` varchar(50) NOT NULL,
+  `role_id` varchar(50) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `app_role` */
 
-insert  into `app_role`(`id`,`name`) values ('1','系统管理员'),('2','普通用户');
+insert  into `app_role`(`role_id`,`name`) values ('1','系统管理员'),('2','普通用户');
 
 /*Table structure for table `app_role_authority` */
 
@@ -53,8 +53,8 @@ CREATE TABLE `app_role_authority` (
   `authority_id` varchar(50) DEFAULT NULL,
   KEY `Role_id` (`Role_id`),
   KEY `authority_id` (`authority_id`),
-  CONSTRAINT `app_role_authority_ibfk_1` FOREIGN KEY (`Role_id`) REFERENCES `app_role` (`id`),
-  CONSTRAINT `app_role_authority_ibfk_2` FOREIGN KEY (`authority_id`) REFERENCES `app_authority` (`id`)
+  CONSTRAINT `app_role_authority_ibfk_1` FOREIGN KEY (`Role_id`) REFERENCES `app_role` (`role_id`),
+  CONSTRAINT `app_role_authority_ibfk_2` FOREIGN KEY (`authority_id`) REFERENCES `app_authority` (`authority_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `app_role_authority` */
@@ -87,7 +87,7 @@ CREATE TABLE `app_user_role` (
   KEY `user_id` (`user_id`),
   KEY `role_id` (`role_id`),
   CONSTRAINT `app_user_role_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `app_user` (`id`),
-  CONSTRAINT `app_user_role_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `app_role` (`id`)
+  CONSTRAINT `app_user_role_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `app_role` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `app_user_role` */
