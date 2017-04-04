@@ -74,6 +74,6 @@
         </session-config>  
       
         <welcome-file-list>  
-            <welcome-file>/user/showInfo/d2c88023-6a96-49c3-af93-5932a8ea79d3.do</welcome-file>  
+            <welcome-file>/html/login.html</welcome-file>  
         </welcome-file-list>  
     </web-app>  
