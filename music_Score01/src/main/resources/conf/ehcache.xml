@@ -13,6 +13,30 @@
         </defaultCache>
         <!-- Special objects setting. --> 
         <cache
+             name="com.music.model.User"
+             maxElementsInMemory="2"
+             memoryStoreEvictionPolicy="LRU"
+             eternal="true"
+             diskPersistent="false"
+             overflowToDisk="false"
+             maxElementsOnDisk="1000000" />
+        <cache
+             name="com.music.model.Role"
+             maxElementsInMemory="2"
+             memoryStoreEvictionPolicy="LRU"
+             eternal="true"
+             diskPersistent="false"
+             overflowToDisk="false"
+             maxElementsOnDisk="1000000" />
+        <cache
+             name="com.music.model.Authority"
+             maxElementsInMemory="2"
+             memoryStoreEvictionPolicy="LRU"
+             eternal="true"
+             diskPersistent="false"
+             overflowToDisk="false"
+             maxElementsOnDisk="1000000" />
+        <cache
              name="com.music.model.Music"
              maxElementsInMemory="2"
              memoryStoreEvictionPolicy="LRU"
