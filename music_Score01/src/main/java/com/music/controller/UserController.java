@@ -7,8 +7,10 @@
     import org.springframework.stereotype.Controller;  
     import org.springframework.ui.ModelMap;  
     import org.springframework.web.bind.annotation.PathVariable;  
-    import org.springframework.web.bind.annotation.RequestMapping;  
-    import org.springframework.web.bind.annotation.ResponseBody;
+    import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.music.model.User;
 import com.music.service.UserService;  
@@ -38,10 +40,22 @@ import com.music.service.UserService;
             return "/user/showInfo";  
         }  
           
-        @RequestMapping("/showInfos")  
-        public @ResponseBody List<User> showUserInfos(){  
-            LOGGER.info("查询用户全部用户");  
-            List<User> userInfos = userService.findAll();  
-            return userInfos;  
-        }  
+		@RequestMapping("/showInfos")  
+		public @ResponseBody List<User> showUserInfos(){  
+			LOGGER.info("查询用户全部用户");  
+			List<User> userInfos = userService.findAll();  
+			return userInfos;  
+		}  
+		@RequestMapping(value="/login.do",method=RequestMethod.GET)  
+		public ModelAndView  login(String userName,String password){
+			LOGGER.info("login"); 
+			ModelAndView mav = new ModelAndView();
+			System.out.println("userName = "+userName+"----password = "+password);
+			if("e10adc3949ba59abbe56e057f20f883e".equals(password)){
+				mav.setViewName("/user/home");
+			}else{
+				mav.setViewName("/user/html/login");
+			}
+			return mav;
+		}  
     }  

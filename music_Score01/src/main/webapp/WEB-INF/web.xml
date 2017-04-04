@@ -74,6 +74,6 @@
         </session-config>  
       
         <welcome-file-list>  
-            <welcome-file>/html/login.html</welcome-file>  
+            <welcome-file>/views/user/html/login.html</welcome-file>  
         </welcome-file-list>  
     </web-app>  
