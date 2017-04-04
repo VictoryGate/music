@@ -48,7 +48,7 @@ public class Role {
 	}
 	@ManyToMany(fetch=FetchType.LAZY)
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-	@JoinTable(name="app_role_authority",catalog="music",joinColumns={@JoinColumn(name="role_id",nullable=false)},inverseJoinColumns={@JoinColumn(name="authority_id",nullable=false)})
+	@JoinTable(name="app_role_authority",joinColumns={@JoinColumn(name="role_id",nullable=false)},inverseJoinColumns={@JoinColumn(name="authority_id",nullable=false)})
 	public Set<Authority> getAuthorities() {
 		return authorities;
 	}

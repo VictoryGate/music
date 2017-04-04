@@ -70,12 +70,13 @@ CREATE TABLE `app_user` (
   `nick_name` varchar(50) DEFAULT NULL,
   `telephone` varchar(50) DEFAULT NULL,
   `register_time` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `app_user` */
 
-insert  into `app_user`(`id`,`nick_name`,`telephone`,`register_time`) values ('081f1feb-139f-4f37-876b-98f8667b1b71','gavin','18659675624','2017-04-02 15:11:10.256'),('6054dc25-6bd1-4f25-80d6-e01cb6781ffa','gavin','13022221111','2017-04-02 00:01:39.137'),('9f8f4692-e8b1-47ad-bb3c-f00b99300b69','gavin','18659675624','2017-04-02 15:00:25.769'),('d2c88023-6a96-49c3-af93-5932a8ea79d3','gavin','13022221111','2017-04-02 00:02:02.547');
+insert  into `app_user`(`id`,`nick_name`,`telephone`,`register_time`,`password`) values ('081f1feb-139f-4f37-876b-98f8667b1b71','gavin','18659675624','2017-04-02 15:11:10.256','e10adc3949ba59abbe56e057f20f883e'),('6054dc25-6bd1-4f25-80d6-e01cb6781ffa','gavin','13022221111','2017-04-02 00:01:39.137','e10adc3949ba59abbe56e057f20f883e'),('9f8f4692-e8b1-47ad-bb3c-f00b99300b69','gavin','18659675624','2017-04-02 15:00:25.769','e10adc3949ba59abbe56e057f20f883e'),('d2c88023-6a96-49c3-af93-5932a8ea79d3','gavin','13022221111','2017-04-02 00:02:02.547','e10adc3949ba59abbe56e057f20f883e');
 
 /*Table structure for table `app_user_role` */
 
