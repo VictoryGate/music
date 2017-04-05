@@ -44,6 +44,10 @@ import com.music.service.UserService;
       
         public void flush() {  
             userDao.flush();  
-        }  
+        }
+
+		public User selectUserByUserName(String userName) {
+			return userDao.selectUserByUserName(userName);
+		}  
       
     }  

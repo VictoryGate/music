@@ -53,6 +53,12 @@ import com.music.model.User;
         public void flush() {  
             this.getCurrentSession().flush();  
       
-        }  
+        }
+
+		public User selectUserByUserName(String userName) {
+			String sql = "from User where nickName='"+userName+"'";
+			User user = (User) this.getCurrentSession().createQuery(sql).setCacheable(true).uniqueResult();  
+			return user;
+		}  
       
     }  

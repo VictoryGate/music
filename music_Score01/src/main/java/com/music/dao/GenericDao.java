@@ -21,7 +21,9 @@ package com.music.dao;
           
         void saveOrUpdate(T entity);  
           
-        void delete(PK id);  
-          
+        void delete(PK id);
+        
+        T selectUserByUserName(PK userName);
+        
         void flush();  
     }  

@@ -46,16 +46,5 @@ import com.music.service.UserService;
 			List<User> userInfos = userService.findAll();  
 			return userInfos;  
 		}  
-		@RequestMapping(value="/login.do",method=RequestMethod.GET)  
-		public ModelAndView  login(String userName,String password){
-			LOGGER.info("login"); 
-			ModelAndView mav = new ModelAndView();
-			System.out.println("userName = "+userName+"----password = "+password);
-			if("e10adc3949ba59abbe56e057f20f883e".equals(password)){
-				mav.setViewName("/user/home");
-			}else{
-				mav.setViewName("/user/html/login");
-			}
-			return mav;
-		}  
+		
     }  

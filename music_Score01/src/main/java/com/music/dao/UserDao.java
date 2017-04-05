@@ -1,4 +1,4 @@
-    package com.music.dao;
+package com.music.dao;
 
 import com.music.model.User;
 
