@@ -12,8 +12,6 @@ MySQL - 5.6.24 : Database - music
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`music` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 USE `music`;
 
 /*Table structure for table `app_authority` */
@@ -76,7 +74,7 @@ CREATE TABLE `app_user` (
 
 /*Data for the table `app_user` */
 
-insert  into `app_user`(`id`,`nick_name`,`telephone`,`register_time`,`password`) values ('081f1feb-139f-4f37-876b-98f8667b1b71','gavin','18659675624','2017-04-02 15:11:10.256','e10adc3949ba59abbe56e057f20f883e'),('6054dc25-6bd1-4f25-80d6-e01cb6781ffa','gavin','13022221111','2017-04-02 00:01:39.137','e10adc3949ba59abbe56e057f20f883e'),('9f8f4692-e8b1-47ad-bb3c-f00b99300b69','gavin','18659675624','2017-04-02 15:00:25.769','e10adc3949ba59abbe56e057f20f883e'),('d2c88023-6a96-49c3-af93-5932a8ea79d3','gavin','13022221111','2017-04-02 00:02:02.547','e10adc3949ba59abbe56e057f20f883e');
+insert  into `app_user`(`id`,`nick_name`,`telephone`,`register_time`,`password`) values ('081f1feb-139f-4f37-876b-98f8667b1b71','gavin','18659675624','2017-04-02 15:11:10.256','e10adc3949ba59abbe56e057f20f883e'),('6054dc25-6bd1-4f25-80d6-e01cb6781ffa','admin','13022221111','2017-04-02 00:01:39.137','e10adc3949ba59abbe56e057f20f883e'),('9f8f4692-e8b1-47ad-bb3c-f00b99300b69','root','18659675624','2017-04-02 15:00:25.769','e10adc3949ba59abbe56e057f20f883e'),('d2c88023-6a96-49c3-af93-5932a8ea79d3','account','13022221111','2017-04-02 00:02:02.547','e10adc3949ba59abbe56e057f20f883e');
 
 /*Table structure for table `app_user_role` */
 
