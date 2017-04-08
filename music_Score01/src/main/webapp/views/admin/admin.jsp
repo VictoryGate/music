@@ -1,3 +1,7 @@
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 
 <html>
@@ -78,7 +82,7 @@
 					<ul class="layui-tab-title">
 						<li class="layui-this">
 							<i class="fa fa-dashboard" aria-hidden="true"></i>
-							<cite>控制面板</cite>
+							<cite>Stave Information</cite>
 						</li>
 					</ul>
 					<div class="layui-tab-content" style="min-height: 150px; padding: 5px 0 0 0;">

@@ -31,7 +31,7 @@
 		</div>
 		<div style="margin:20px 0;"></div>
 		
-		<table id="dg" title="曲谱列表" style="width:100%;height:400px;margin-bottom: 30px" data-options="
+		<table id="dg" title="曲谱列表" style="width:100%;height:380px;margin-bottom: 30px" data-options="
 					rownumbers:true,
 					singleSelect:true,
 					autoRowHeight:true,
