@@ -1,13 +1,13 @@
 var navs = [{
-	"title": "基本元素",
+	"title": "基本操作",
 	"icon": "fa-cubes",
 	"spread": true,
 	"children": [{
-		"title": "按钮",
+		"title": "乐谱表",
 		"icon": "&#xe641;",
-		"href": "button.html"
+		"href": "../score/scoreList.jsp"
 	}, {
-		"title": "表单",
+		"title": "创建乐谱",
 		"icon": "&#xe63c;",
 		"href": "form.html"
 	}, {
