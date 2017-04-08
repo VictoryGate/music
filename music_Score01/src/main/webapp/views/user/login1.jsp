@@ -18,7 +18,7 @@
 	<body class="beg-login-bg">
 		<div class="beg-login-box">
 			<header>
-				<h1>后台登录</h1>
+				<h1>欢迎来到音乐社区</h1>
 			</header>
 			<div class="beg-login-main">
 				<form action="/manage/login" class="layui-form" method="post"><input name="__RequestVerificationToken" type="hidden" value="fkfh8D89BFqTdrE2iiSdG_L781RSRtdWOH411poVUWhxzA5MzI8es07g6KPYQh9Log-xf84pIR2RIAEkOokZL3Ee3UKmX0Jc8bW8jOdhqo81" />
@@ -61,7 +61,7 @@
 					
 				form.on('submit(login)',function(data){
 					
-					location.href='index.html';
+					location.href='../admin/admin.jsp';
 					return false;
 				});
 			});
