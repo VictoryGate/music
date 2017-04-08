@@ -28,7 +28,7 @@
 				<div class="layui-main">
 					<div class="admin-login-box">
 						<a class="logo" style="left: 0;" href="#">
-							<span style="font-size: 22px;">BeginnerAdmin</span>
+							<span style="font-size: 22px;">文慧音乐</span>
 						</a>
 						<div class="admin-side-toggle">
 							<i class="fa fa-bars" aria-hidden="true"></i>
@@ -108,7 +108,7 @@
 			<script type="text/template" id="lock-temp">
 				<div class="admin-header-lock" id="lock-box">
 					<div class="admin-header-lock-img">
-						<img src="images/0.jpg"/>
+						<img src="../../img/image/0.jpg"/>
 					</div>
 					<div class="admin-header-lock-name" id="lockUserName">beginner</div>
 					<input type="text" class="admin-header-lock-input" value="输入密码解锁.." name="lockPwd" id="lockPwd" />
