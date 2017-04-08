@@ -138,7 +138,7 @@ function getStaveList() {
 				rows.push({
 					staveName : data[i].staveName,
 					creater : data[i].creater,
-					userName : data[i].userName,
+					userName : data[i].user.nickName,
 					staveType : data[i].staveType,
 					creatTime : data[i].creatTime,
 					lastUpdateTime : data[i].lastUpdateTime,
