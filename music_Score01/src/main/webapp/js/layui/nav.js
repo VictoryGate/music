@@ -9,7 +9,7 @@ var navs = [{
 	}, {
 		"title": "创建乐谱",
 		"icon": "&#xe63c;",
-		"href": "form.html"
+		"href": "/music_Score01/index.jsp"
 	}, {
 		"title": "表格",
 		"icon": "&#xe63c;",

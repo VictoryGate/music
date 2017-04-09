@@ -138,7 +138,7 @@
 							title: 'YouTube',
 							maxmin: true,
 							type: 2,
-							content: 'video.html',
+							content: '/music_Score01/views/admin/video.html',
 							area: ['800px', '500px']
 						});
 					});
