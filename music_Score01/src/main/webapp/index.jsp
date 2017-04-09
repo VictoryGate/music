@@ -92,7 +92,7 @@
                     drawRightStem(ctx, {'x': 350, 'y': 100 + (13 * 3.67)});
                     drawSingleFlagDown(ctx, {'x': 350, 'y': 100 + (13 * 3.67)});
 
-                 /*   drawStaff(ctx, {'x': 0, 'y': 150}, {'width': 400});
+                    drawStaff(ctx, {'x': 0, 'y': 150}, {'width': 400});
                     drawTabClef(ctx, {'x': 10, 'y': 150});
                     drawThree(ctx, {'x': 35, 'y': 150});
                     drawFour(ctx, {'x': 35, 'y': 164.9});
@@ -101,10 +101,10 @@
                     drawPercussionsClef(ctx, {'x': 10, 'y': 200});
                     drawSix(ctx, {'x': 35, 'y': 200});
                     drawEight(ctx, {'x': 35, 'y': 214.5});
-                    drawWholeNote(ctx, {'x': 60, 'y': 225});*/
+                    drawWholeNote(ctx, {'x': 60, 'y': 225});
 
- //                   var scale = 5.0;//五线谱的比例
-/*                    drawStaff(ctx, {'x': 0, 'y': 250}, {'width': 400, 'scale': scale});				//五线谱
+                    var scale = 5.0;//五线谱的比例
+                    drawStaff(ctx, {'x': 0, 'y': 250}, {'width': 400, 'scale': scale});				//五线谱
                     drawTabClef(ctx, {'x': 10 * scale, 'y': 250}, {'scale': scale});				//A B 
                     drawCommonTime(ctx, {'x': 40 * scale, 'y': 250}, {'scale': scale});				//C
                     drawTabZero(ctx, {'x': 70 * scale, 'y': 250}, {'scale': scale});
@@ -116,13 +116,13 @@
                     drawTabSix(ctx, {'x': 90 * scale, 'y': 250 + 7.34 * 3 * scale}, {'scale': scale});
                     drawTabSeven(ctx, {'x': 90 * scale, 'y': 250 + 7.34 * 4 * scale}, {'scale': scale});
                     drawTabEight(ctx, {'x': 110 * scale, 'y': 250}, {'scale': scale});
-                    drawTabNine(ctx, {'x': 110 * scale, 'y': 250 + 7.34 * scale}, {'scale': scale});*/
-                  //  drawTrebleClef(ctx, {'x': 10 * scale, 'y': 250}, {'scale': scale});				//高音符号
-                  //  drawSharp(ctx, {'x': 35 * scale, 'y': 250 + 3.625 * scale}, {'scale': scale});  //#	
-                  //  drawSharp(ctx, {'x': 44 * scale, 'y': 250 + 14.55 * scale}, {'scale': scale});	//#
-                  //  drawSharp(ctx, {'x': 53 * scale, 'y': 250 + 0}, {'scale': scale});					//#
-                  //  drawCommonTime(ctx, {'x': 70 * scale, 'y': 250}, {'scale': scale});						//C
-                  //  drawHundredTwentyEighthRest(ctx, {'x': 90 * scale, 'y': 250}, {'scale': scale});
+                    drawTabNine(ctx, {'x': 110 * scale, 'y': 250 + 7.34 * scale}, {'scale': scale});
+                    drawTrebleClef(ctx, {'x': 10 * scale, 'y': 250}, {'scale': scale});				//高音符号
+                    drawSharp(ctx, {'x': 35 * scale, 'y': 250 + 3.625 * scale}, {'scale': scale});  //#	
+                    drawSharp(ctx, {'x': 44 * scale, 'y': 250 + 14.55 * scale}, {'scale': scale});	//#
+                    drawSharp(ctx, {'x': 53 * scale, 'y': 250 + 0}, {'scale': scale});					//#
+                    drawCommonTime(ctx, {'x': 70 * scale, 'y': 250}, {'scale': scale});						//C
+                    drawHundredTwentyEighthRest(ctx, {'x': 90 * scale, 'y': 250}, {'scale': scale});
                 });
             }
             );

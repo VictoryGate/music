@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.music.model.Authority;
@@ -50,7 +51,7 @@ public class LoginController {
 				if(null!=goUrl&&!goUrl.equals("")){
 					mav.setViewName("redirect:"+goUrl);
 				}else{
-					mav.setViewName("/user/home");
+					mav.setViewName("/admin/admin");
 				}
 			}else{
 				erroeMessage = "密码不能为空";
@@ -59,7 +60,7 @@ public class LoginController {
 			erroeMessage = "用户名不能为空";
 		}
 		if(null!=erroeMessage){
-			mav.setViewName("/user/login");
+			mav.setViewName("/user/login1");
 		}
 		mav.addObject("erroeMessage",erroeMessage);
 		return mav;
@@ -85,5 +86,4 @@ public class LoginController {
 		}
 		request.getSession().setAttribute(Constant.SESSION_USER_Authoritys,set);
 	}
-
 }
