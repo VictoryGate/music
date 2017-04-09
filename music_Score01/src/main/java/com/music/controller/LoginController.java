@@ -33,7 +33,7 @@ public class LoginController {
 				if(null!=user){
 					if(user.getPassword().equals(password)){
 						req.getSession().setAttribute(Constant.SESSION_USER, user);
-						mav.setViewName("/user/home");
+						mav.setViewName("/admin/admin");
 					}else{
 						erroeMessage="密码错误";
 					}

@@ -5,7 +5,7 @@ var navs = [{
 	"children": [{
 		"title": "乐谱表",
 		"icon": "&#xe641;",
-		"href": "../score/scoreList.jsp"
+		"href": "/music_Score01/views/score/scoreList.jsp"
 	}, {
 		"title": "创建乐谱",
 		"icon": "&#xe63c;",
