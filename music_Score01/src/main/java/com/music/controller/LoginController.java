@@ -42,6 +42,7 @@ public class LoginController {
 						LOGGER.info(user.getNickName()+" 登陆成功  ");
 						req.getSession().setAttribute(Constant.SESSION_USER_KEY, user);
 						goUrl = (String) req.getSession().getAttribute(Constant.SESSION_USER_GOURL);
+						req.getSession().setAttribute(Constant.SESSION_USER_GOURL,"");
 					}else{
 						erroeMessage="密码错误";
 					}
