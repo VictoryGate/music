@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.music.model.User;
@@ -39,7 +40,7 @@ public class LoginController {
 				}else{
 					erroeMessage="用户不存在";
 				}
-				mav.setViewName("/user/home");
+				mav.setViewName("/admin/admin");
 				
 			}else{
 				erroeMessage = "密码不能为空";
@@ -48,9 +49,11 @@ public class LoginController {
 			erroeMessage = "用户名不能为空";
 		}
 		if(null!=erroeMessage){
-			mav.setViewName("/user/login");
+			mav.setViewName("/user/login1");
 		}
 		mav.addObject("erroeMessage",erroeMessage);
 		return mav;
 	}  
+    
+    
 }
