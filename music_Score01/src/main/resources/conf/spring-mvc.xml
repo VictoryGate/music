@@ -45,6 +45,8 @@
 	         <mvc:mapping path="/**"/>
 	      	 <mvc:exclude-mapping path="/user/index.do"/>
 	      	 <mvc:exclude-mapping path="/user/login.do"/>
+	      	 <mvc:exclude-mapping path="/user/login1.do"/>
+	      	 <mvc:exclude-mapping path="/admin/admin.do"/>
 	         <bean class="com.music.utils.authority.LoginIntercept"/>
 	      </mvc:interceptor>
 	    </mvc:interceptors>
