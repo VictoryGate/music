@@ -1,5 +1,8 @@
 package com.music.controller;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
@@ -9,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.music.model.Authority;
+import com.music.model.Role;
 import com.music.model.User;
 import com.music.service.UserService;
 import com.music.utils.Constant;
@@ -29,18 +34,24 @@ public class LoginController {
 		if(null!=userName && !userName.equals("")){
 			if(null!=password && !password.equals("")){
 				User user = this.userService.selectUserByUserName(userName);
+				String goUrl ="";
 				if(null!=user){
 					if(user.getPassword().equals(password)){
-						req.getSession().setAttribute(Constant.SESSION_USER, user);
-						mav.setViewName("/user/home");
+						userAuthor(req,user);
+						LOGGER.info(user.getNickName()+" 登陆成功  ");
+						req.getSession().setAttribute(Constant.SESSION_USER_KEY, user);
+						goUrl = (String) req.getSession().getAttribute(Constant.SESSION_USER_GOURL);
 					}else{
 						erroeMessage="密码错误";
 					}
 				}else{
 					erroeMessage="用户不存在";
 				}
-				mav.setViewName("/user/home");
-				
+				if(null!=goUrl&&!goUrl.equals("")){
+					mav.setViewName("redirect:"+goUrl);
+				}else{
+					mav.setViewName("/user/home");
+				}
 			}else{
 				erroeMessage = "密码不能为空";
 			}
@@ -52,5 +63,27 @@ public class LoginController {
 		}
 		mav.addObject("erroeMessage",erroeMessage);
 		return mav;
-	}  
+	}
+    @RequestMapping(value="/index")
+    public ModelAndView index(){
+    	ModelAndView mav = new ModelAndView("/user/login");
+    	return mav;
+    }
+    /**
+     * 权限保存到session
+     * @param request
+     * @param user
+     */
+	public void userAuthor(HttpServletRequest request,User user){
+		Set<String> set = new HashSet<String>();
+		Set<Role> role = user.getRoles();
+		for (Role role2 : role) {
+			Set<Authority> authority = role2.getAuthorities();
+			for (Authority authority2 : authority) {
+				set.add(authority2.getName());
+			}
+		}
+		request.getSession().setAttribute(Constant.SESSION_USER_Authoritys,set);
+	}
+
 }

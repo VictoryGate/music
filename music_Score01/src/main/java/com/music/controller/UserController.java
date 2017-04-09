@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.music.model.User;
-import com.music.service.UserService;  
+import com.music.service.UserService;
+import com.music.utils.authority.Authority;  
       
     @Controller  
     @RequestMapping("/user")  
@@ -31,7 +32,6 @@ import com.music.service.UserService;
 		public void setUserService(UserService userService) {
 			this.userService = userService;
 		}
-
 		@RequestMapping( value ="/showInfo/{userId}")  
         public String showUserInfo(ModelMap modelMap, @PathVariable String userId){  
             LOGGER.info("查询用户：" + userId);  
@@ -39,7 +39,7 @@ import com.music.service.UserService;
             modelMap.addAttribute("userInfo", userInfo);  
             return "/user/showInfo";  
         }  
-          
+		@Authority(value="sys:edit") 
 		@RequestMapping("/showInfos")  
 		public @ResponseBody List<User> showUserInfos(){  
 			LOGGER.info("查询用户全部用户");  

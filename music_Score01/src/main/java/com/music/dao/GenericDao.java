@@ -1,7 +1,9 @@
 package com.music.dao;
       
     import java.io.Serializable;  
-    import java.util.List;  
+    import java.util.List;
+
+import com.music.model.Role;  
       
     /** 
      * Dao通用接口 
@@ -22,8 +24,6 @@ package com.music.dao;
         void saveOrUpdate(T entity);  
           
         void delete(PK id);
-        
-        T selectUserByUserName(PK userName);
         
         void flush();  
     }  

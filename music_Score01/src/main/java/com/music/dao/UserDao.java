@@ -2,6 +2,6 @@ package com.music.dao;
 
 import com.music.model.User;
 
-    public interface UserDao extends GenericDao<User, String> {  
-      
+    public interface UserDao extends GenericDao<User, String> { 
+    	User selectUserByUserName(String userName);
     }  

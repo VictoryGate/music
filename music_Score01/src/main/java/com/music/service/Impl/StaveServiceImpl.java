@@ -15,7 +15,6 @@ public class StaveServiceImpl implements StaveService {
 	@Autowired  
 	private StaveDao staveDao;
 
-	@Override
 	public List<Stave> findAll() {
 		
 		return staveDao.findAll();

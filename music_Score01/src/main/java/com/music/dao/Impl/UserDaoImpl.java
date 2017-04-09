@@ -56,8 +56,8 @@ import com.music.model.User;
         }
 
 		public User selectUserByUserName(String userName) {
-			String sql = "from User where nickName='"+userName+"'";
-			User user = (User) this.getCurrentSession().createQuery(sql).setCacheable(true).uniqueResult();  
+			String sql = "from User where nickName=?";
+			User user = (User) this.getCurrentSession().createQuery(sql).setParameter(0, userName).setCacheable(true).uniqueResult();  
 			return user;
 		}  
       

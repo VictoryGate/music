@@ -74,6 +74,6 @@
         </session-config>  
       
         <welcome-file-list>  
-            <welcome-file>/views/user/login.jsp</welcome-file>  
+            <welcome-file>/user/index.do</welcome-file>  
         </welcome-file-list>  
     </web-app>  

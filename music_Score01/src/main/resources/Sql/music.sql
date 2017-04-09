@@ -26,7 +26,7 @@ CREATE TABLE `app_authority` (
 
 /*Data for the table `app_authority` */
 
-insert  into `app_authority`(`authority_id`,`name`) values ('1','sys:eidit'),('2','sys:config'),('3','sys:onlyRead'),('4','sys:add'),('5','sys:delete');
+insert  into `app_authority`(`authority_id`,`name`) values ('1','sys:edit'),('2','sys:config'),('3','sys:onlyRead'),('4','sys:add'),('5','sys:delete');
 
 /*Table structure for table `app_role` */
 
