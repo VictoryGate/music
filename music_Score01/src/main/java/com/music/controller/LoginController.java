@@ -17,6 +17,7 @@ import com.music.model.Role;
 import com.music.model.User;
 import com.music.service.UserService;
 import com.music.utils.Constant;
+import com.music.utils.MD5;
 
 @Controller  
 @RequestMapping("/user")
@@ -36,7 +37,7 @@ public class LoginController {
 				User user = this.userService.selectUserByUserName(userName);
 				String goUrl ="";
 				if(null!=user){
-					if(user.getPassword().equals(password)){
+					if(user.getPassword().equals(MD5.getMD5(MD5.getMD5(password)+userName))){
 						userAuthor(req,user);
 						LOGGER.info(user.getNickName()+" 登陆成功  ");
 						req.getSession().setAttribute(Constant.SESSION_USER_KEY, user);
@@ -68,6 +69,14 @@ public class LoginController {
     @RequestMapping(value="/index")
     public ModelAndView index(){
     	ModelAndView mav = new ModelAndView("/user/login1");
+    	return mav;
+    }
+    @RequestMapping(value="/logOut")
+    public ModelAndView logOut(HttpServletRequest req){
+    	ModelAndView mav = new ModelAndView("/user/login1");
+    	User user = (User) req.getSession().getAttribute(Constant.SESSION_USER_KEY);
+    	req.getSession().setAttribute(Constant.SESSION_USER_KEY,null);
+    	LOGGER.info(user.getNickName()+" 注销成功！");
     	return mav;
     }
     /**

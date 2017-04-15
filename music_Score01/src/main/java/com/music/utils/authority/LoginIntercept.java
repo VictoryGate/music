@@ -2,8 +2,6 @@ package com.music.utils.authority;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.music.model.User;
@@ -25,7 +23,7 @@ public class LoginIntercept extends HandlerInterceptorAdapter {
 			url = url+" ? "+param;
 		}
 		request.getSession().setAttribute(Constant.SESSION_USER_GOURL,url);
-		request.getRequestDispatcher(RedirectUrl.loginUrl).forward(request, response);;
+		request.getRequestDispatcher(RedirectUrl.loginUrl).forward(request, response);
 		return false;
 	}
 }

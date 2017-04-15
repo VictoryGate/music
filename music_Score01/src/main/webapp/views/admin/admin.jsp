@@ -55,14 +55,14 @@
 						<li class="layui-nav-item">
 							<a href="javascript:;" class="admin-header-user">
 								<img src="${basePath}/img/image/0.jpg" />
-								<span>beginner</span>
+								<span>${user.nickName}</span>
 							</a>
 							<dl class="layui-nav-child">
 								<dd>
-									<a href="javascript:;"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
+									<a href="javascript:void(0);" id="userInfo"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
 								</dd>
 								<dd>
-									<a href="javascript:;"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
+									<a href="<c:url value='/user/userSetting.do'/>"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
 								</dd>
 								<dd id="lock">
 									<a href="javascript:;">
@@ -70,14 +70,14 @@
 									</a>
 								</dd>
 								<dd>
-									<a href="${basePath}/views/user/login1.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+									<a href="<c:url value='/user/logOut.do'/>"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
 								</dd>
 							</dl>
 						</li>
 					</ul>
 					<ul class="layui-nav admin-header-item-mobile">
 						<li class="layui-nav-item">
-							<a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+							<a href="<c:url value='/user/logOut.do'/>"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
 						</li>
 					</ul>
 				</div>
@@ -111,14 +111,14 @@
 				<i class="layui-icon">&#xe602;</i>
 			</div>
 			<div class="site-mobile-shade"></div>
-			
+			<button style="display:none;" id="userInfoBut"></button>
 			<!--锁屏模板 start-->
 			<script type="text/template" id="lock-temp">
 				<div class="admin-header-lock" id="lock-box">
 					<div class="admin-header-lock-img">
 						<img src="${basePath}/img/image/0.jpg"/>
 					</div>
-					<div class="admin-header-lock-name" id="lockUserName">beginner</div>
+					<div class="admin-header-lock-name" id="lockUserName">${user.nickName}</div>
 					<input type="text" class="admin-header-lock-input" value="输入密码解锁.." name="lockPwd" id="lockPwd" />
 					<button class="layui-btn layui-btn-small" id="unlock">解锁</button>
 				</div>
@@ -127,18 +127,39 @@
 			<script type="text/javascript" src="<c:url value='/js/layui/layui.js'/>"></script>
 			<script type="text/javascript" src="<c:url value='/js/layui/nav.js'/>"></script>
 			<script type="text/javascript" src="<c:url value='/js/layui/index.js'/>"></script>
-
 			<script>
 				layui.use('layer', function() {
 					var $ = layui.jquery,
 						layer = layui.layer;
-
+					var Htmldata="";
 					$('#video1').on('click', function() {
 						layer.open({
 							title: 'YouTube',
 							maxmin: true,
 							type: 2,
 							content: '/music_Score01/views/admin/video.html',
+							area: ['800px', '500px']
+						});
+					});
+					$('#userInfo').on('click', function() {
+						debugger;
+						$.ajax({
+				    		url:"<c:url value='/user/userInfo.do'/>",
+				    		dateType:"html",
+				    		async:false,
+				    		type:"post",
+				    		success:function(data){
+				    			Htmldata = data;
+				    		},
+				    		error:function(e){
+								alert(e+"cuowu ");
+							}
+				    	});
+						layer.open({
+							title: '个人信息',
+							maxmin: true,
+							type: 2,
+							content: Htmldata,
 							area: ['800px', '500px']
 						});
 					});

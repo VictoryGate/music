@@ -15,18 +15,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
     <script type="text/javascript" src="/js/jQuery/jquery.js"></script>  
     <title>userInfo</title>  
-    </head>  
-    <body>  
-        用户信息 昵称： ${userInfo.nickName} 用户id：${userInfo.id} 用户电话:${userInfo.telephone } 注册时间：  
-        <fmt:formatDate value="${userInfo.registerTime }" pattern="yyyy-MM-dd HH:mm:ss" />  
+    </head> 
+    <script type="text/javascript" src="<c:url value='/js/jQuery/jquery.js'/>"></script>
+   
+    <body>
+    <p id="userInfo">
+        用户信息 昵称： ${user.nickName} 用户id：${user.id} 用户电话:${user.telephone } 注册时间：  
+        <fmt:formatDate value="${user.registerTime }" pattern="yyyy-MM-dd HH:mm:ss" />  
         角色：[  
-        <c:forEach items="${ userInfo.roles}" var="role">  
+        <c:forEach items="${ user.roles}" var="role">  
                             ${role.name }   权限[  
                                <c:forEach items="${ role.authorities}" var="authority">  
                                  ${authority.name }   
                                </c:forEach> ]  
                           </c:forEach>  
         ]
-      
+      </p>
     </body>  
     </html>  

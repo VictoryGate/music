@@ -14,7 +14,7 @@ public class AnalysisAnnotation {
             Method[] methods = rtClass.getMethods();  
                 for (Method method : methods) {  
                     if (method.isAnnotationPresent(Authority.class)) {  
-                        Authority author = (Authority)method.getAnnotation(Authority.class);  
+                        Authority author = method.getAnnotation(Authority.class);  
                         System.out.println("Utility's Author ---> " + author.url() + " from " + author.value());  
                     }  
                 }  

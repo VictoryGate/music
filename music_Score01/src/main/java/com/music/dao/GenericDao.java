@@ -1,9 +1,7 @@
 package com.music.dao;
       
     import java.io.Serializable;  
-    import java.util.List;
-
-import com.music.model.Role;  
+    import java.util.List;  
       
     /** 
      * Dao通用接口 

@@ -27,6 +27,6 @@ public class RedirectUrl {
 	}
 
 	public void setUrl(String url) {
-		this.url = url;
+		RedirectUrl.url = url;
 	}
 }

@@ -40,7 +40,7 @@
 				</div>
 				<div class="layui-form-item">
 					<label class="beg-login-icon"> <i class="layui-icon">&#xe642;</i>
-					</label> <input type="password" name="password" lay-verify="password"
+					</label> <input type="password" id="password" name="password" lay-verify="password"
 						autocomplete="off" placeholder="这里输入密码" class="layui-input">
 				</div>
 				<div class="layui-form-item">
@@ -75,8 +75,6 @@
 					});
 					return false;
 				}
-				
-				
 				//location.href = '../admin/admin.jsp';
 				return true;
 			});

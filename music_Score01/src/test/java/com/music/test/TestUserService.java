@@ -12,7 +12,8 @@
       
     import com.alibaba.fastjson.JSON;
 	import com.music.model.User;
-	import com.music.service.UserService;  
+	import com.music.service.UserService;
+import com.music.utils.MD5;  
    
     @RunWith(SpringJUnit4ClassRunner.class)
     @ContextConfiguration(locations = {"classpath:conf/spring.xml",  
@@ -29,9 +30,10 @@
         public void save() {  
             User User = new User();  
             User.setId(UUID.randomUUID().toString());  
-            User.setNickName("gavin");  
+            User.setNickName("account");  
             User.setRegisterTime(new Date());  
-            User.setTelephone("18659675624");  
+            User.setTelephone("18659675624");
+            User.setPassword("123456");
             String id = userService.save(User);  
             LOGGER.info(JSON.toJSONString(id));  
         }  

@@ -6,7 +6,8 @@ package com.music.service.Impl;
 
 import com.music.dao.UserDao;
 import com.music.model.User;
-import com.music.service.UserService;  
+import com.music.service.UserService;
+import com.music.utils.MD5;  
 
     @Service("userService")  
     public class UserServiceImpl implements UserService {  
@@ -30,8 +31,9 @@ import com.music.service.UserService;
             userDao.persist(entity);  
         }  
       
-        public String save(User entity) {  
-            return userDao.save(entity);  
+        public String save(User entity) {
+        	entity.setPassword(MD5.getMD5(MD5.getMD5(entity.getPassword())+entity.getNickName()));
+            return userDao.save(entity);
         }  
       
         public void saveOrUpdate(User entity) {  
@@ -47,6 +49,7 @@ import com.music.service.UserService;
         }
 
 		public User selectUserByUserName(String userName) {
+			
 			return userDao.selectUserByUserName(userName);
 		}  
       
